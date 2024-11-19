@@ -1,0 +1,24 @@
+{
+  "name": "kr-back-express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "rimraf dist && tsc-watch --onSuccess \"npm run watch:server\"",
+    "watch:server": "nodemon --exec ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "nodemon": "^3.1.7",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^6.2.1"
+  }
+}

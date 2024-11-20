@@ -1,6 +1,6 @@
 import * as bcrypt from "bcrypt";
 
-export class PasswordService {
+class PasswordService {
     private saltRounds = 10;
 
     public async hashPassword(password: string): Promise<string> {
@@ -14,3 +14,5 @@ export class PasswordService {
         return await bcrypt.compare(password, hashedPassword);
     }
 }
+
+export const passwordService = new PasswordService();

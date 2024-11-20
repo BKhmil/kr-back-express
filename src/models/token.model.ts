@@ -1,4 +1,4 @@
-import {IToken} from "../modules/auth/interfaces/token.interface";
+import {IToken} from "../interfaces/jwt/token.interface";
 import {model, Schema} from "mongoose";
 import {User} from "./user.model";
 

@@ -16,18 +16,19 @@ app.use(
         if (err instanceof ApiError) {
             res.status(err.status).json({ message: err.message });
         } else {
+            console.error(err.message, err.stack);
             res.status(500).json({ message: err.message });
         }
     },
 );
 
-process.on("uncaughtException", (err) => {
+process.on("uncaughtException", (err: Error) => {
     console.error("Uncaught exception", err.message, err.stack);
     process.exit(1);
 });
 
 // from node.js docs
-process.on('unhandledRejection', (reason, promise) => {
+process.on('unhandledRejection', (reason: unknown, promise: Promise<unknown>) => {
     console.log('Unhandled Rejection at:', promise, 'reason:', reason);
 });
 
